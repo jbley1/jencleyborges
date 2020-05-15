@@ -1,0 +1,274 @@
+/* soft reset do css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {background-image:
+  url('https://image.freepik.com/fotos-gratis/teclado-de-piano-de-cauda-fundo-desfocado-suave-preto-e-branco_41691-533.jpg');
+  background-size: 100% 100vh;
+  font-family: 'Source Code Pro', monospace;
+  height: 100vh ;
+  font-size: 10px;
+  
+}
+
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media(min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+header{
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgperfil{
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: 0px -35px;
+  height: 300px;
+  width: 300px;
+ animation: linear 2s animacaoperfil forwards;
+  }
+
+ @media (min-width: 370px){
+   
+  .imgperfil{
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: 0px -35px;
+    height: 140px;
+    width: 140px;
+  }
+ }
+
+
+@media (min-width: 560px){
+   
+  .imgperfil{
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: 0px -35px;
+    height: 250px;
+    width: 250px;
+   
+  }
+ }
+    
+   @keyframes animacaoperfil{
+     
+  from {transform: scale(0.5) translateY(20vh);
+    opacity: 0;
+  }
+  to {transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+   }
+
+ .perfil{
+  align-content: center;
+  padding: 3em;
+}
+
+.menu{
+      background-color: white ;
+      position: fixed;
+      width: 100vw;
+      top: 0px;
+      z-index: 1;
+    }
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+.menu li{
+    list-style: none;
+  }
+
+.menu a{
+    display: block;
+    padding:10px 20px ;
+    transition: background-color 2s, color 1s;
+    border-radius: 10%;
+  }
+
+.menu a:active,
+.menu a:hover{
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+  }
+
+a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+a:hover{
+    text-decoration: none;
+  }
+
+.titulo{
+  transform: scale(0.2) translateY(20vh);
+  opacity: 0;
+
+  animation: linear 1.5s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{
+
+  from {transform: scale(0.2) translateY(20vh);
+    opacity: 0;
+  }
+  to {transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.site-title,
+.site-subtitle{
+    color: rgb(255, 255, 255); 
+    text-align: center;
+  }
+  
+.site-subtitle{
+    font-style: italic;
+    font-family: 'Asap', sans-serif;
+    line-height: 1.8em;
+  }
+  
+.site-title{
+  font-family: 'Abril Fatface', cursive ;
+  font-size: 50px;
+  }
+
+.sobre,
+.portfolio {
+  padding: 2em;
+  min-height: 95vh; 
+  background-color: rgba(190, 190, 190, 0.89);
+ 
+}
+
+.contato{
+  padding: 2em;
+  min-height: 30vh;
+}
+
+@media(min-width: 1200px){
+  .sobre,
+  .contato,
+  .portfolio{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(0, 0, 0);  
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+.sobre p {
+  color: black;
+  margin-bottom: 1.4em;
+  text-indent: 1.4em;
+  text-align: justify;
+}
+
+.sobre a{
+  color: whitesmoke;
+  text-decoration: underline;
+
+}
+
+.sobre a:hover{
+  text-shadow:0px 0px 30px whitesmoke
+} 
+
+.sobre .avatar{
+float: right;
+margin-left: 2em;
+}  
+
+.sobre .avatar img{
+  height: 400px;
+  width: 350px;
+}
+
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+  align-content: center;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(2, 240px);
+    align-content: center;
+    justify-content: center;
+    height: calc(95vh - 8em - 28px);
+  }
+}
+
+@media (min-width: 740px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(2, 320px);
+    align-content: center;
+    justify-content: center;
+    height: calc(95vh - 8em - 28px);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
+
+}
+
+.img-portfolio{
+  height: 180px;
+  width: 100%;
+  transition: transform 500ms;
+  border-radius: 10%;
+}
+
+.img-portfolio:hover{
+  transform: scale(1.1);
+}
+
+@media(min-width: 1220px) {  
+    .img-portfolio{
+      height: 240px;
+      width: 310px;
+    }
+}
+
+
+.contato .icons{
+  text-align: center;
+}
+
+.contato a{
+  color: black;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover{
+  text-decoration: none;
+  text-shadow:0px 0px 30px whitesmoke
+}
